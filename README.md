@@ -2,6 +2,14 @@
 
 A new Flutter project.
 
+## Mason commands
+
+mason init
+mason get
+mason make your_name
+
+## Mason run
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

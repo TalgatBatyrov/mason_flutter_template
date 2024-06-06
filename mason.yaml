@@ -15,3 +15,5 @@
 bricks:
   feature:
     path: bricks/feature
+  usecase:
+    path: bricks/usecase

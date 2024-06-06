@@ -30,10 +30,4 @@ vars:
     type: string
     description: Feature name
     default: feature
-    prompt: What is your feature name?
-
-  name:
-    type: string
-    description: Your name
-    default: Dash
-    prompt: What is your name?
+    prompt: Введите название feature?

@@ -1,4 +1,4 @@
-class FeatureNameUsecase {
-  FeatureNameUsecase(this._repository);
+class FeatureNameUseCase {
+  FeatureNameUseCase(this._repository);
   final _repository;
 }

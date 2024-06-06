@@ -57,7 +57,7 @@ class _HomeState extends State<Home> {
               'You have pushed the button this many times:',
             ),
             Text(
-              'Dash$_counter',
+              '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
