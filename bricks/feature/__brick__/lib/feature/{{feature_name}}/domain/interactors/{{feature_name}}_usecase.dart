@@ -1,4 +1,4 @@
-class FeatureNameUseCase {
-  FeatureNameUseCase(this._repository);
-  final _repository;
-}
+// class {{usecase_name.pascalCase()}}UseCase {
+//   {{usecase_name.pascalCase()}}UseCase(this._repository);
+//   final repository;
+// }

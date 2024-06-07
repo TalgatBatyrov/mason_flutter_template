@@ -1,3 +1,3 @@
-abstract class FutureNameRepository {
-  // Future<Either<Exception, FutureNameModel>> getFutureName() async {}
-}
+// abstract class {{feature_name.pascalCase()}}Repository {
+//   // Future<Either<Exception, {{feature_name.pascalCase()}}Model>> get{{feature_name.pascalCase()}}() async {}
+// }
