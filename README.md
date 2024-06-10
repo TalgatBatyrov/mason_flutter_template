@@ -2,20 +2,26 @@
 
 A Flutter project template with Mason.
 
-## Mason commands
+## Setup
 
-1.  Init the project:
+1.  Install Mason:
+
+            dart pub global activate mason_cli
+
+2.  Init the project:
 
             mason init
 
-2.  Mason get setup:
+## Mason commands
+
+1.  Mason get setup:
 
             mason get
 
-3.  Create a new brick:
+2.  Create a new brick:
 
             mason new brick_name
 
-4.  Generate a new brick:
+3.  Generate a new brick:
 
             mason make brick_name
