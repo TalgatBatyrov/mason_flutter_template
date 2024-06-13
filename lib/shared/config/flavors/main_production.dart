@@ -4,7 +4,7 @@ import 'package:test_app/shared/config/flavors/flavor_config.dart';
 
 void main() {
   FlavorConfig(
-    name: 'Main',
+    name: 'Production',
     apiBaseUrl: 'https://api.prod.example.com',
   );
 

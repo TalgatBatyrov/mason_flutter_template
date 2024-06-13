@@ -15,12 +15,8 @@ bricks:
     path: bricks/my_bloc
   packages:
     path: bricks/packages
-  core:
-    path: bricks/core
-  config:
-    path: bricks/config
   # BLoc из Brickhub
   package_bloc:
     path: bricks/package_bloc
-  flavors:
-    path: bricks/flavors
+  shared: 
+    path: bricks/shared

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/config/flavor_config.dart';
+import 'package:test_app/shared/config/flavors/flavor_config.dart';
 // import 'package:test_app/feature/home/presentation/pages/home.dart';
 
 class App extends StatefulWidget {
