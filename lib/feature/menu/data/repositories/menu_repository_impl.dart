@@ -1,3 +1,0 @@
-class MenuRepositoryImpl {
-  void getMenu() {}
-}

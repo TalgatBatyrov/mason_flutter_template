@@ -1,1 +1,0 @@
-// class {{bloc_name.pascalCase()}}Bloc {}

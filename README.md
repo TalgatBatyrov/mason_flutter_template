@@ -2,6 +2,8 @@
 
 A Flutter project template with Mason.
 
+mason new brick_name --hooks
+
 ## Setup
 
 1.  Install Mason:
