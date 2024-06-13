@@ -31,7 +31,7 @@ void run(HookContext context) async {
     var blocContextVariables = {
       'name': context.vars['bloc_name'],
       // basic, equatable, freezed
-      'style': 'basic',
+      'style': 'freezed',
     };
 
     await generator.hooks.preGen(

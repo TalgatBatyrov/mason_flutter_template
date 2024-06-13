@@ -1,6 +1,21 @@
-
+import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 import 'package:test_app/feature/home/domain/repositories/home_repository_impl.dart';
+import 'package:test_app/shared/config/api_service/api_client.dart';
 
- class HomeRepository  implements  HomeRepositoryImpl{
-  // Future<Either<Exception, HomeModel>> getHome() async {}
+@injectable
+class HomeRepository implements HomeRepositoryImpl {
+  final ApiClient _apiClient;
+
+  const HomeRepository(this._apiClient);
+
+  @override
+  Future<Either<Exception, String>> getHome() async {
+    try {
+      final response = await _apiClient.dio.get('/todos/1');
+      return Right(response.data['title'] as String);
+    } catch (e) {
+      return Left(Exception('Exception: $e'));
+    }
+  }
 }

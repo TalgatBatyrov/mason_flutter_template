@@ -13,6 +13,10 @@ void run(HookContext context) async {
       'get_it',
       'injectable',
       'flutter_bloc',
+      'dio',
+      'freezed',
+      'freezed_annotation',
+      'dartz',
     ]);
 
     // dev dependencies

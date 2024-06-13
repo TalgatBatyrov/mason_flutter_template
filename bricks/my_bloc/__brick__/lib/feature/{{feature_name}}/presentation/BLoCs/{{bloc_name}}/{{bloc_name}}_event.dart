@@ -1,5 +1,6 @@
 part of '{{bloc_name}}_bloc.dart';
 
-sealed class {{bloc_name.pascalCase()}}Event {
-  const {{bloc_name.pascalCase()}}Event();
+@freezed
+class {{bloc_name.pascalCase()}}Event with _${{bloc_name.pascalCase()}}Event {
+  const factory {{bloc_name.pascalCase()}}Event.started() = _Started;
 }

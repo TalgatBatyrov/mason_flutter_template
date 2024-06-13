@@ -1,13 +1,21 @@
-// final class {{repository_name.pascalCase()}}Repository {
-//   {{repository_name.pascalCase()}}Repository(this.repository);
-//   final repository;
-// }
 
+import 'package:dartz/dartz.dart';
+import 'package:test_app/feature/{{feature_name}}/domain/repositories/{{feature_name}}_repository_impl.dart';
+import 'package:test_app/shared/config/api_service/api_client.dart';
 
- import 'package:test_app/feature/{{feature_name}}/data/repositories/{{repository_name}}_repository_impl.dart';
  
- class {{repository_name.pascalCase()}}Repository  implements  {{repository_name.pascalCase()}}RepositoryImpl{
-  // Future<Either<Exception, {{feature_name.pascalCase()}}Model>> get{{feature_name.pascalCase()}}() async {}
+ class {{repository_name.pascalCase()}}Repository  implements  {{feature_name.pascalCase()}}RepositoryImpl{
+   final ApiClient _apiClient;
+
+  const {{repository_name.pascalCase()}}Repository(this._apiClient);
+  
+
+  @override
+  Future<Either<Exception, String>> get{{feature_name.pascalCase()}}() {
+    final response = _apiClient.dio.get('/todos/1');
+
+    return response.then((value) => Right(value.data.toString()));
+  }
 }
 
 

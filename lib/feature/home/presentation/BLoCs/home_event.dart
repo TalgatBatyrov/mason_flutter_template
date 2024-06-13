@@ -1,5 +1,6 @@
 part of 'home_bloc.dart';
 
-sealed class HomeEvent {
-  const HomeEvent();
+@freezed
+class HomeEvent with _$HomeEvent {
+  const factory HomeEvent.fetchData() = _FetchData;
 }
