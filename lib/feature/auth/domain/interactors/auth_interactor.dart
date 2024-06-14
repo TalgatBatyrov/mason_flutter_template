@@ -1,10 +1,10 @@
 import 'package:injectable/injectable.dart';
 import 'package:test_app/feature/auth/data/repositories/auth_repository.dart';
 
-@singleton
+
+@injectable
 class AuthInteractor {
   final AuthRepository _repository;
-
   AuthInteractor(this._repository);
 
   Future<String> getAuth() async {

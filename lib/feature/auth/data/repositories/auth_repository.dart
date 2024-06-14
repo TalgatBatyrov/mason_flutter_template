@@ -3,11 +3,13 @@ import 'package:injectable/injectable.dart';
 import 'package:test_app/feature/auth/domain/repositories/auth_repository_impl.dart';
 import 'package:test_app/shared/config/api_service/api_client.dart';
 
+
 @injectable
-class AuthRepository implements AuthRepositoryImpl {
-  final ApiClient _apiClient;
+ class AuthRepository  implements  AuthRepositoryImpl{
+   final ApiClient _apiClient;
 
   const AuthRepository(this._apiClient);
+
 
   @override
   Future<Either<Exception, String>> getAuth() {
@@ -15,4 +17,6 @@ class AuthRepository implements AuthRepositoryImpl {
 
     return response.then((value) => Right(value.data.toString()));
   }
+
+  // Future<Either<Exception, AuthModel>> getAuth() async {}
 }

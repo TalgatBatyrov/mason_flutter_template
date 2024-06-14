@@ -11,14 +11,25 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.6
-  equatable: ^2.0.5
-  flutter_native_splash: ^2.4.0
-  shared_preferences: ^2.2.3
+  # di
   get_it: ^7.7.0
   injectable: ^2.4.2
-  flutter_bloc: ^8.1.6
+
+  # cache
+  shared_preferences: ^2.2.3
+
+  # http
   dio: ^5.4.3+1
+
+  # ui
+  flutter_native_splash: ^2.4.0
+  cupertino_icons: ^1.0.6
+
+  # state management
+  flutter_bloc: ^8.1.6
+  
+  # other
+  equatable: ^2.0.5
   freezed: ^2.5.2
   freezed_annotation: ^2.4.1
   dartz: ^0.10.1

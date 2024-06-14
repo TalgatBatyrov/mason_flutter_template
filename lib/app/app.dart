@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_app/feature/auth/presentation/BLoCs/auth_bloc.dart';
 import 'package:test_app/feature/home/presentation/BLoCs/home_bloc.dart';
+import 'package:test_app/feature/lola/presentation/BLoCs/lola_bloc.dart';
 import 'package:test_app/shared/config/di/injection.dart';
 import 'package:test_app/shared/config/flavors/flavor_config.dart';
 // import 'package:test_app/feature/home/presentation/pages/home.dart';
@@ -19,12 +20,9 @@ class _AppState extends State<App> {
     final config = FlavorConfig.instance;
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (context) => getIt<HomeBloc>(),
-        ),
-        BlocProvider(
-          create: (context) => getIt<AuthBloc>(),
-        ),
+        BlocProvider(create: (_) => getIt<HomeBloc>()),
+        BlocProvider(create: (_) => getIt<AuthBloc>()),
+        BlocProvider(create: (_) => getIt<LolaBloc>()),
       ],
       child: Builder(
         builder: (context) {
@@ -42,7 +40,7 @@ class _AppState extends State<App> {
                     builder: (context, state) {
                       return Center(
                         child: state.map(
-                          initial: (_) => const Text('Initial'),
+                          initial: (_) => const Text('home'),
                           loading: (_) => const CircularProgressIndicator(),
                           success: (data) => Text(data.data),
                           error: (message) => Text(message.message),
@@ -62,6 +60,18 @@ class _AppState extends State<App> {
                       );
                     },
                   ),
+                  BlocBuilder<LolaBloc, LolaState>(
+                    builder: (context, state) {
+                      return Center(
+                        child: state.map(
+                          initial: (_) => const Text('lola'),
+                          loading: (_) => const CircularProgressIndicator(),
+                          success: (data) => Text(data.data),
+                          error: (message) => Text(message.message),
+                        ),
+                      );
+                    },
+                  ),
                   const Spacer(),
                   TextButton(
                     style: TextButton.styleFrom(
@@ -71,7 +81,7 @@ class _AppState extends State<App> {
                     onPressed: () {
                       context.read<HomeBloc>().add(const HomeEvent.fetchData());
                     },
-                    child: const Text('Fetch Data'),
+                    child: const Text('Fetch Data home'),
                   ),
                   TextButton(
                     style: TextButton.styleFrom(
@@ -81,7 +91,17 @@ class _AppState extends State<App> {
                     onPressed: () {
                       context.read<AuthBloc>().add(const AuthEvent.fetchData());
                     },
-                    child: const Text('Fetch Data'),
+                    child: const Text('Fetch Data auth'),
+                  ),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.blue,
+                    ),
+                    onPressed: () {
+                      context.read<LolaBloc>().add(const LolaEvent.fetchData());
+                    },
+                    child: const Text('Fetch Data talgat'),
                   ),
                   const Spacer(),
                 ],

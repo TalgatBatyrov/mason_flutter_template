@@ -12,11 +12,9 @@ import 'package:test_app/shared/config/api_service/api_client.dart';
 
 
   @override
-  Future<Either<Exception, String>> get{{feature_name.pascalCase()}}() {
-    final response = _apiClient.dio.get('/todos/1');
+  Future<Either<Exception, String>> get{{feature_name.pascalCase()}}() async{
+    final response = await _apiClient.dio.get('/todos/1');
 
-    return response.then((value) => Right(value.data.toString()));
+    return Right(response.data.toString());
   }
-
-  // Future<Either<Exception, {{feature_name.pascalCase()}}Model>> get{{feature_name.pascalCase()}}() async {}
 }

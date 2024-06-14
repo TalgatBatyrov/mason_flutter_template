@@ -20,3 +20,5 @@ bricks:
     path: bricks/package_bloc
   shared: 
     path: bricks/shared
+  interactor:
+    path: bricks/interactor
