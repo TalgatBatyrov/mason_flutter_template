@@ -11,8 +11,27 @@ part '{{feature_name}}_state.dart';
 class {{feature_name.pascalCase()}}Bloc extends Bloc<{{feature_name.pascalCase()}}Event, {{feature_name.pascalCase()}}State> {
    final {{feature_name.pascalCase()}}Repository _{{feature_name}}Repository;
   {{feature_name.pascalCase()}}Bloc(this._{{feature_name}}Repository) : super(const {{feature_name.pascalCase()}}State.initial()) {
-    on<{{feature_name.pascalCase()}}Event>((event, emit) {
-      // TODO: implement event handler
-    });
+    on<{{feature_name.pascalCase()}}Event>(_onEvent);
+
   }
+    _onEvent(
+      {{feature_name.pascalCase()}}Event events,
+      Emitter<{{feature_name.pascalCase()}}State> emit,
+    ) {
+      return events.map(
+        fetchData: (v) => onFetchData(v, emit),
+      );
+    }
+  
+   onFetchData(
+      _FetchDataEvent event,
+      Emitter<{{feature_name.pascalCase()}}State> emit,
+    ) async {
+      emit(const {{feature_name.pascalCase()}}State.loading());
+      final response = await _{{feature_name}}Repository.get{{feature_name.pascalCase()}}();
+      response.fold(
+        (l) => emit({{feature_name.pascalCase()}}State.error(message: l.toString())),
+        (r) => emit({{feature_name.pascalCase()}}State.success(data: r)),
+      );
+    }
 }

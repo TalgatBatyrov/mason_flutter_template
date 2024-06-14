@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'home_bloc.dart';
+part of 'auth_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$HomeEvent {
+mixin _$AuthEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetchData,
@@ -51,15 +51,15 @@ mixin _$HomeEvent {
 }
 
 /// @nodoc
-abstract class $HomeEventCopyWith<$Res> {
-  factory $HomeEventCopyWith(HomeEvent value, $Res Function(HomeEvent) then) =
-      _$HomeEventCopyWithImpl<$Res, HomeEvent>;
+abstract class $AuthEventCopyWith<$Res> {
+  factory $AuthEventCopyWith(AuthEvent value, $Res Function(AuthEvent) then) =
+      _$AuthEventCopyWithImpl<$Res, AuthEvent>;
 }
 
 /// @nodoc
-class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
-    implements $HomeEventCopyWith<$Res> {
-  _$HomeEventCopyWithImpl(this._value, this._then);
+class _$AuthEventCopyWithImpl<$Res, $Val extends AuthEvent>
+    implements $AuthEventCopyWith<$Res> {
+  _$AuthEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -76,7 +76,7 @@ abstract class _$$FetchDataEventImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$FetchDataEventImplCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$FetchDataEventImpl>
+    extends _$AuthEventCopyWithImpl<$Res, _$FetchDataEventImpl>
     implements _$$FetchDataEventImplCopyWith<$Res> {
   __$$FetchDataEventImplCopyWithImpl(
       _$FetchDataEventImpl _value, $Res Function(_$FetchDataEventImpl) _then)
@@ -90,7 +90,7 @@ class _$FetchDataEventImpl implements _FetchDataEvent {
 
   @override
   String toString() {
-    return 'HomeEvent.fetchData()';
+    return 'AuthEvent.fetchData()';
   }
 
   @override
@@ -159,12 +159,12 @@ class _$FetchDataEventImpl implements _FetchDataEvent {
   }
 }
 
-abstract class _FetchDataEvent implements HomeEvent {
+abstract class _FetchDataEvent implements AuthEvent {
   const factory _FetchDataEvent() = _$FetchDataEventImpl;
 }
 
 /// @nodoc
-mixin _$HomeState {
+mixin _$AuthState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -218,15 +218,15 @@ mixin _$HomeState {
 }
 
 /// @nodoc
-abstract class $HomeStateCopyWith<$Res> {
-  factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
-      _$HomeStateCopyWithImpl<$Res, HomeState>;
+abstract class $AuthStateCopyWith<$Res> {
+  factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) =
+      _$AuthStateCopyWithImpl<$Res, AuthState>;
 }
 
 /// @nodoc
-class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
-    implements $HomeStateCopyWith<$Res> {
-  _$HomeStateCopyWithImpl(this._value, this._then);
+class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
+    implements $AuthStateCopyWith<$Res> {
+  _$AuthStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -243,7 +243,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$AuthStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -257,7 +257,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'HomeState.initial()';
+    return 'AuthState.initial()';
   }
 
   @override
@@ -344,7 +344,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements HomeState {
+abstract class _Initial implements AuthState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -357,7 +357,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$AuthStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -371,7 +371,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'HomeState.loading()';
+    return 'AuthState.loading()';
   }
 
   @override
@@ -458,7 +458,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements HomeState {
+abstract class _Loading implements AuthState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -473,7 +473,7 @@ abstract class _$$DataImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$DataImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$DataImpl>
+    extends _$AuthStateCopyWithImpl<$Res, _$DataImpl>
     implements _$$DataImplCopyWith<$Res> {
   __$$DataImplCopyWithImpl(_$DataImpl _value, $Res Function(_$DataImpl) _then)
       : super(_value, _then);
@@ -502,7 +502,7 @@ class _$DataImpl implements _Data {
 
   @override
   String toString() {
-    return 'HomeState.success(data: $data)';
+    return 'AuthState.success(data: $data)';
   }
 
   @override
@@ -597,7 +597,7 @@ class _$DataImpl implements _Data {
   }
 }
 
-abstract class _Data implements HomeState {
+abstract class _Data implements AuthState {
   const factory _Data({required final String data}) = _$DataImpl;
 
   String get data;
@@ -617,7 +617,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$AuthStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -647,7 +647,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'HomeState.error(message: $message)';
+    return 'AuthState.error(message: $message)';
   }
 
   @override
@@ -742,7 +742,7 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements HomeState {
+abstract class _Error implements AuthState {
   const factory _Error({required final String message}) = _$ErrorImpl;
 
   String get message;

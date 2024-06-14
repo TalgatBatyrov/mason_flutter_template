@@ -5,7 +5,7 @@ import 'package:test_app/shared/config/flavors/flavor_config.dart';
 void main() {
   FlavorConfig(
     name: 'Development',
-    apiBaseUrl: 'https://jsonplaceholder.typicode.com',
+    apiBaseUrl: 'https://api.prod.example.com',
   );
 
   runApp(const App());
