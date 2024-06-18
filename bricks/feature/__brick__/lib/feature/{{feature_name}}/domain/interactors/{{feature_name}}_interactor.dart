@@ -2,7 +2,7 @@ import 'package:injectable/injectable.dart';
 import 'package:test_app/feature/{{feature_name}}/data/repositories/{{feature_name}}_repository.dart';
 
 
-@injectable
+@singleton
 class {{feature_name.pascalCase()}}Interactor {
   final {{feature_name.pascalCase()}}Repository _repository;
   {{feature_name.pascalCase()}}Interactor(this._repository);

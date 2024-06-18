@@ -8,7 +8,7 @@ class {{interactor_name.pascalCase()}}Interactor {
   {{interactor_name.pascalCase()}}Interactor(this._repository);
 
   Future<String> get{{interactor_name.pascalCase()}}() async {
-    final response = await _repository.get{{feature_name.pascalCase()}}();
+    final response = await _repository.get{{interactor_name.pascalCase()}}();
     return response.fold(
       (l) => throw Exception(l.toString()),
       (r) => r,

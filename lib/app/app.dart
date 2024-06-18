@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_app/feature/auth/presentation/BLoCs/auth_bloc.dart';
 import 'package:test_app/feature/home/presentation/BLoCs/home_bloc.dart';
-import 'package:test_app/feature/lola/presentation/BLoCs/lola_bloc.dart';
+import 'package:test_app/feature/other/presentation/BLoCs/other_bloc.dart';
+import 'package:test_app/feature/profile/presentation/BLoCs/profile_bloc.dart';
 import 'package:test_app/shared/config/di/injection.dart';
 import 'package:test_app/shared/config/flavors/flavor_config.dart';
-// import 'package:test_app/feature/home/presentation/pages/home.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -15,14 +14,15 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
+  final config = FlavorConfig.instance;
+
   @override
   Widget build(BuildContext context) {
-    final config = FlavorConfig.instance;
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => getIt<HomeBloc>()),
-        BlocProvider(create: (_) => getIt<AuthBloc>()),
-        BlocProvider(create: (_) => getIt<LolaBloc>()),
+        BlocProvider(create: (_) => getIt<OtherBloc>()),
+        BlocProvider(create: (_) => getIt<ProfileBloc>()),
       ],
       child: Builder(
         builder: (context) {
@@ -39,35 +39,35 @@ class _AppState extends State<App> {
                   BlocBuilder<HomeBloc, HomeState>(
                     builder: (context, state) {
                       return Center(
-                        child: state.map(
-                          initial: (_) => const Text('home'),
-                          loading: (_) => const CircularProgressIndicator(),
-                          success: (data) => Text(data.data),
-                          error: (message) => Text(message.message),
+                        child: state.maybeWhen(
+                          orElse: () => const Text('Home'),
+                          loading: () => const CircularProgressIndicator(),
+                          success: (data) => Text(data),
+                          error: (message) => Text(message),
                         ),
                       );
                     },
                   ),
-                  BlocBuilder<AuthBloc, AuthState>(
+                  BlocBuilder<OtherBloc, OtherState>(
                     builder: (context, state) {
                       return Center(
-                        child: state.map(
-                          initial: (_) => const Text('Auth'),
-                          loading: (_) => const CircularProgressIndicator(),
-                          success: (data) => Text(data.data),
-                          error: (message) => Text(message.message),
+                        child: state.maybeWhen(
+                          orElse: () => const Text('Other'),
+                          loading: () => const CircularProgressIndicator(),
+                          success: (data) => Text(data),
+                          error: (message) => Text(message),
                         ),
                       );
                     },
                   ),
-                  BlocBuilder<LolaBloc, LolaState>(
+                  BlocBuilder<ProfileBloc, ProfileState>(
                     builder: (context, state) {
                       return Center(
-                        child: state.map(
-                          initial: (_) => const Text('lola'),
-                          loading: (_) => const CircularProgressIndicator(),
-                          success: (data) => Text(data.data),
-                          error: (message) => Text(message.message),
+                        child: state.maybeWhen(
+                          orElse: () => const Text('Profile'),
+                          loading: () => const CircularProgressIndicator(),
+                          success: (data) => Text(data),
+                          error: (message) => Text(message),
                         ),
                       );
                     },
@@ -81,7 +81,7 @@ class _AppState extends State<App> {
                     onPressed: () {
                       context.read<HomeBloc>().add(const HomeEvent.fetchData());
                     },
-                    child: const Text('Fetch Data home'),
+                    child: const Text('Fetch Data in Home'),
                   ),
                   TextButton(
                     style: TextButton.styleFrom(
@@ -89,9 +89,11 @@ class _AppState extends State<App> {
                       backgroundColor: Colors.blue,
                     ),
                     onPressed: () {
-                      context.read<AuthBloc>().add(const AuthEvent.fetchData());
+                      context
+                          .read<OtherBloc>()
+                          .add(const OtherEvent.fetchData());
                     },
-                    child: const Text('Fetch Data auth'),
+                    child: const Text('Fetch Data in Other'),
                   ),
                   TextButton(
                     style: TextButton.styleFrom(
@@ -99,9 +101,11 @@ class _AppState extends State<App> {
                       backgroundColor: Colors.blue,
                     ),
                     onPressed: () {
-                      context.read<LolaBloc>().add(const LolaEvent.fetchData());
+                      context
+                          .read<ProfileBloc>()
+                          .add(const ProfileEvent.fetchData());
                     },
-                    child: const Text('Fetch Data talgat'),
+                    child: const Text('Fetch Data in Profile'),
                   ),
                   const Spacer(),
                 ],
