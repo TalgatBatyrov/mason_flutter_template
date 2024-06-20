@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
+import 'package:test_app/shared/config/api_service/exceptions/server_exception.dart';
 import 'package:test_app/shared/config/flavors/flavor_config.dart';
 
 @injectable
@@ -38,4 +39,12 @@ class ApiClient {
         receiveTimeout: const Duration(seconds: 15),
         sendTimeout: const Duration(seconds: 15),
       );
+
+  void _handleError(DioException e) {
+    if (e.type == DioExceptionType.cancel) {
+      return;
+    }
+    final exception = ServerException.fromDio(e);
+    throw exception;
+  }
 }

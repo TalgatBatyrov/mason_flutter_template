@@ -1,17 +1,17 @@
+import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-import 'package:test_app/feature/home/data/repositories/home_repository.dart';
-
+import 'package:test_app/feature/home/data/model/home_model.dart';
+import 'package:test_app/feature/home/domain/repositories/home_repository_interface.dart';
 
 @singleton
 class HomeInteractor {
-  final HomeRepository _repository;
-  HomeInteractor(this._repository);
+  HomeInteractor({
+    required HomeRepositoryInterface repository,
+  }) : _repository = repository;
 
-  Future<String> getHome() async {
-    final response = await _repository.getHome();
-    return response.fold(
-      (l) => throw Exception(l.toString()),
-      (r) => r,
-    );
+  final HomeRepositoryInterface _repository;
+
+  Future<Either<Exception, HomeModel>> getHome() async {
+    return await _repository.getHome();
   }
 }

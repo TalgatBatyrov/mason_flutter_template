@@ -3,27 +3,27 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:test_app/feature/profile/domain/interactors/profile_interactor.dart';
 
-
 part 'profile_bloc.freezed.dart';
 part 'profile_event.dart';
 part 'profile_state.dart';
 
 @injectable
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
-   final ProfileInteractor _profileInteractor;
+  final ProfileInteractor _profileInteractor;
   ProfileBloc(this._profileInteractor) : super(const ProfileState.initial()) {
     on<ProfileEvent>(_onEvent);
   }
-    _onEvent(
-      ProfileEvent events,
-      Emitter<ProfileState> emit,
-    ) {
-      return events.map(
-        fetchData: (v) => onFetchData(v, emit),
-      );
-    }
-  
+  _onEvent(
+    ProfileEvent events,
+    Emitter<ProfileState> emit,
+  ) {
+    return events.map(
+      fetchData: (v) => onFetchData(v, emit),
+    );
+  }
+
   onFetchData(
+    // ignore: library_private_types_in_public_api
     _FetchDataEvent event,
     Emitter<ProfileState> emit,
   ) async {

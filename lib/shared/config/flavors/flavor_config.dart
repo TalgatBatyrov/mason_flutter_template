@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/widgets.dart';
 import 'package:test_app/shared/config/di/injection.dart';
 
@@ -13,6 +14,7 @@ class FlavorConfig {
   }) {
     _instance ??= FlavorConfig._internal(name, apiBaseUrl);
     _initializeDependencies();
+
     return _instance!;
   }
 
@@ -33,5 +35,6 @@ class FlavorConfig {
     //   options: DefaultFirebaseOptions.currentPlatform,
     // );
     configureDependencies();
+    await EasyLocalization.ensureInitialized();
   }
 }

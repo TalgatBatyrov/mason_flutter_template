@@ -23,6 +23,7 @@ class OtherBloc extends Bloc<OtherEvent, OtherState> {
   }
 
   onFetchData(
+    // ignore: library_private_types_in_public_api
     _FetchDataEvent event,
     Emitter<OtherState> emit,
   ) async {

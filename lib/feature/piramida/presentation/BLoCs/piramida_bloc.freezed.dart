@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'home_bloc.dart';
+part of 'piramida_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$HomeEvent {
+mixin _$PiramidaEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetchData,
@@ -51,15 +51,16 @@ mixin _$HomeEvent {
 }
 
 /// @nodoc
-abstract class $HomeEventCopyWith<$Res> {
-  factory $HomeEventCopyWith(HomeEvent value, $Res Function(HomeEvent) then) =
-      _$HomeEventCopyWithImpl<$Res, HomeEvent>;
+abstract class $PiramidaEventCopyWith<$Res> {
+  factory $PiramidaEventCopyWith(
+          PiramidaEvent value, $Res Function(PiramidaEvent) then) =
+      _$PiramidaEventCopyWithImpl<$Res, PiramidaEvent>;
 }
 
 /// @nodoc
-class _$HomeEventCopyWithImpl<$Res, $Val extends HomeEvent>
-    implements $HomeEventCopyWith<$Res> {
-  _$HomeEventCopyWithImpl(this._value, this._then);
+class _$PiramidaEventCopyWithImpl<$Res, $Val extends PiramidaEvent>
+    implements $PiramidaEventCopyWith<$Res> {
+  _$PiramidaEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -76,7 +77,7 @@ abstract class _$$FetchDataEventImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$FetchDataEventImplCopyWithImpl<$Res>
-    extends _$HomeEventCopyWithImpl<$Res, _$FetchDataEventImpl>
+    extends _$PiramidaEventCopyWithImpl<$Res, _$FetchDataEventImpl>
     implements _$$FetchDataEventImplCopyWith<$Res> {
   __$$FetchDataEventImplCopyWithImpl(
       _$FetchDataEventImpl _value, $Res Function(_$FetchDataEventImpl) _then)
@@ -90,7 +91,7 @@ class _$FetchDataEventImpl implements _FetchDataEvent {
 
   @override
   String toString() {
-    return 'HomeEvent.fetchData()';
+    return 'PiramidaEvent.fetchData()';
   }
 
   @override
@@ -159,17 +160,17 @@ class _$FetchDataEventImpl implements _FetchDataEvent {
   }
 }
 
-abstract class _FetchDataEvent implements HomeEvent {
+abstract class _FetchDataEvent implements PiramidaEvent {
   const factory _FetchDataEvent() = _$FetchDataEventImpl;
 }
 
 /// @nodoc
-mixin _$HomeState {
+mixin _$PiramidaState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(HomeModel data) success,
+    required TResult Function(PiramidaModel data) success,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -177,7 +178,7 @@ mixin _$HomeState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(HomeModel data)? success,
+    TResult? Function(PiramidaModel data)? success,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -185,7 +186,7 @@ mixin _$HomeState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(HomeModel data)? success,
+    TResult Function(PiramidaModel data)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -218,15 +219,16 @@ mixin _$HomeState {
 }
 
 /// @nodoc
-abstract class $HomeStateCopyWith<$Res> {
-  factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
-      _$HomeStateCopyWithImpl<$Res, HomeState>;
+abstract class $PiramidaStateCopyWith<$Res> {
+  factory $PiramidaStateCopyWith(
+          PiramidaState value, $Res Function(PiramidaState) then) =
+      _$PiramidaStateCopyWithImpl<$Res, PiramidaState>;
 }
 
 /// @nodoc
-class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
-    implements $HomeStateCopyWith<$Res> {
-  _$HomeStateCopyWithImpl(this._value, this._then);
+class _$PiramidaStateCopyWithImpl<$Res, $Val extends PiramidaState>
+    implements $PiramidaStateCopyWith<$Res> {
+  _$PiramidaStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -243,7 +245,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$PiramidaStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -257,7 +259,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'HomeState.initial()';
+    return 'PiramidaState.initial()';
   }
 
   @override
@@ -274,7 +276,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(HomeModel data) success,
+    required TResult Function(PiramidaModel data) success,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -285,7 +287,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(HomeModel data)? success,
+    TResult? Function(PiramidaModel data)? success,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -296,7 +298,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(HomeModel data)? success,
+    TResult Function(PiramidaModel data)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -344,7 +346,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements HomeState {
+abstract class _Initial implements PiramidaState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -357,7 +359,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$PiramidaStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -371,7 +373,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'HomeState.loading()';
+    return 'PiramidaState.loading()';
   }
 
   @override
@@ -388,7 +390,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(HomeModel data) success,
+    required TResult Function(PiramidaModel data) success,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -399,7 +401,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(HomeModel data)? success,
+    TResult? Function(PiramidaModel data)? success,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -410,7 +412,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(HomeModel data)? success,
+    TResult Function(PiramidaModel data)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -458,7 +460,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements HomeState {
+abstract class _Loading implements PiramidaState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -468,14 +470,14 @@ abstract class _$$DataImplCopyWith<$Res> {
           _$DataImpl value, $Res Function(_$DataImpl) then) =
       __$$DataImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({HomeModel data});
+  $Res call({PiramidaModel data});
 
-  $HomeModelCopyWith<$Res> get data;
+  $PiramidaModelCopyWith<$Res> get data;
 }
 
 /// @nodoc
 class __$$DataImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$DataImpl>
+    extends _$PiramidaStateCopyWithImpl<$Res, _$DataImpl>
     implements _$$DataImplCopyWith<$Res> {
   __$$DataImplCopyWithImpl(_$DataImpl _value, $Res Function(_$DataImpl) _then)
       : super(_value, _then);
@@ -489,14 +491,14 @@ class __$$DataImplCopyWithImpl<$Res>
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as HomeModel,
+              as PiramidaModel,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $HomeModelCopyWith<$Res> get data {
-    return $HomeModelCopyWith<$Res>(_value.data, (value) {
+  $PiramidaModelCopyWith<$Res> get data {
+    return $PiramidaModelCopyWith<$Res>(_value.data, (value) {
       return _then(_value.copyWith(data: value));
     });
   }
@@ -508,11 +510,11 @@ class _$DataImpl implements _Data {
   const _$DataImpl({required this.data});
 
   @override
-  final HomeModel data;
+  final PiramidaModel data;
 
   @override
   String toString() {
-    return 'HomeState.success(data: $data)';
+    return 'PiramidaState.success(data: $data)';
   }
 
   @override
@@ -537,7 +539,7 @@ class _$DataImpl implements _Data {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(HomeModel data) success,
+    required TResult Function(PiramidaModel data) success,
     required TResult Function(String message) error,
   }) {
     return success(data);
@@ -548,7 +550,7 @@ class _$DataImpl implements _Data {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(HomeModel data)? success,
+    TResult? Function(PiramidaModel data)? success,
     TResult? Function(String message)? error,
   }) {
     return success?.call(data);
@@ -559,7 +561,7 @@ class _$DataImpl implements _Data {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(HomeModel data)? success,
+    TResult Function(PiramidaModel data)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -607,10 +609,10 @@ class _$DataImpl implements _Data {
   }
 }
 
-abstract class _Data implements HomeState {
-  const factory _Data({required final HomeModel data}) = _$DataImpl;
+abstract class _Data implements PiramidaState {
+  const factory _Data({required final PiramidaModel data}) = _$DataImpl;
 
-  HomeModel get data;
+  PiramidaModel get data;
   @JsonKey(ignore: true)
   _$$DataImplCopyWith<_$DataImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -627,7 +629,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$PiramidaStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -657,7 +659,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'HomeState.error(message: $message)';
+    return 'PiramidaState.error(message: $message)';
   }
 
   @override
@@ -682,7 +684,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(HomeModel data) success,
+    required TResult Function(PiramidaModel data) success,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -693,7 +695,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(HomeModel data)? success,
+    TResult? Function(PiramidaModel data)? success,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -704,7 +706,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(HomeModel data)? success,
+    TResult Function(PiramidaModel data)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -752,7 +754,7 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements HomeState {
+abstract class _Error implements PiramidaState {
   const factory _Error({required final String message}) = _$ErrorImpl;
 
   String get message;
