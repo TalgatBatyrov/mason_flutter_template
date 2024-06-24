@@ -1,17 +1,17 @@
+import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-import 'package:test_app/feature/{{feature_name}}/data/repositories/{{feature_name}}_repository.dart';
+import 'package:test_app/feature/{{feature_name}}/data/model/{{interactor_name}}/{{interactor_name}}_model.dart';
+import 'package:test_app/feature/{{feature_name}}/domain/repositories/{{interactor_name}}/{{interactor_name}}_repository_interface.dart';
 
-
-@injectable
+@singleton
 class {{interactor_name.pascalCase()}}Interactor {
-  final {{feature_name.pascalCase()}}Repository _repository;
-  {{interactor_name.pascalCase()}}Interactor(this._repository);
+  {{interactor_name.pascalCase()}}Interactor({
+    required {{interactor_name.pascalCase()}}RepositoryInterface repository,
+  }) : _repository = repository;
 
-  Future<String> get{{interactor_name.pascalCase()}}() async {
-    final response = await _repository.get{{interactor_name.pascalCase()}}();
-    return response.fold(
-      (l) => throw Exception(l.toString()),
-      (r) => r,
-    );
+  final {{interactor_name.pascalCase()}}RepositoryInterface _repository;
+
+  Future<Either<Exception, {{interactor_name.pascalCase()}}Model>> get{{interactor_name.pascalCase()}}() async {
+    return await _repository.get{{interactor_name.pascalCase()}}();
   }
 }

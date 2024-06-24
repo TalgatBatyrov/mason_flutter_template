@@ -5,8 +5,8 @@ bricks:
     path: bricks/usecase
   repository:
     path: bricks/repository
-  repository_impl:
-    path: bricks/repository_impl
+  repository_interface:
+    path: bricks/repository_interface
   widget:
     git:
       url: "https://github.com/felangel/mason.git"

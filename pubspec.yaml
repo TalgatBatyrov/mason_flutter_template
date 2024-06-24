@@ -22,10 +22,10 @@ dependencies:
   dio: ^5.4.3+1
   dartz: ^0.10.1
 
-
   # ui
   flutter_native_splash: ^2.4.0
   cupertino_icons: ^1.0.6
+  flutter_launcher_icons: ^0.13.1
 
   # state management
   flutter_bloc: ^8.1.6
@@ -52,14 +52,14 @@ dev_dependencies:
   json_serializable: ^6.8.0
 
 flutter_launcher_icons:
-  android: "launcher_icon"
+  android: true
   ios: true
-  # image_path: "your_path"
+  image_path: "assets/icon/ruster/logo.png"
   min_sdk_android: 21
 
 flutter_native_splash:
-  # color: "#your_color"
-  # image: "your_path
+  color: "#42a5f5"
+  image: "assets/icon/ruster/logo.png"
   web: false
 
 
@@ -68,4 +68,7 @@ flutter:
 
   assets:
     - assets/
+    - assets/icon/
+    - assets/icon/ruster/
+    - assets/icon/vector/
     - assets/translations/

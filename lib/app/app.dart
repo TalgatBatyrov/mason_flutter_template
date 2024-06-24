@@ -1,12 +1,15 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:test_app/feature/home/presentation/BLoCs/home_bloc.dart';
 import 'package:test_app/feature/other/presentation/BLoCs/other_bloc.dart';
 import 'package:test_app/feature/piramida/presentation/BLoCs/piramida_bloc.dart';
 import 'package:test_app/feature/profile/presentation/BLoCs/profile_bloc.dart';
 import 'package:test_app/shared/config/di/injection.dart';
 import 'package:test_app/shared/config/flavors/flavor_config.dart';
+import 'package:test_app/shared/ui/themes/dark_theme.dart';
+import 'package:test_app/shared/ui/themes/light_theme.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -33,13 +36,15 @@ class _AppState extends State<App> {
         fallbackLocale: const Locale('en', 'US'),
         child: Builder(
           builder: (context) {
-            return MaterialApp(
+            return MaterialApp.router(
               localizationsDelegates: context.localizationDelegates,
               supportedLocales: context.supportedLocales,
               locale: context.locale,
               debugShowCheckedModeBanner: false,
               title: config.name,
-              home: const Home(),
+              routerConfig: getIt<GoRouter>(),
+              darkTheme: AppDarkTheme.theme,
+              theme: AppLightTheme.theme,
             );
           },
         ),
@@ -56,6 +61,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  bool isEnglish = true;
   final config = FlavorConfig.instance;
   @override
   Widget build(BuildContext context) {
@@ -116,6 +122,19 @@ class _HomeState extends State<Home> {
               );
             },
           ),
+          Switch(
+            value: isEnglish,
+            onChanged: (value) {
+              if (value) {
+                context.setLocale(const Locale('en'));
+                isEnglish = true;
+              } else {
+                context.setLocale(const Locale('ru'));
+                isEnglish = false;
+              }
+              setState(() {});
+            },
+          ),
           const Spacer(),
           TextButton(
             style: TextButton.styleFrom(
@@ -123,9 +142,6 @@ class _HomeState extends State<Home> {
               backgroundColor: Colors.blue,
             ),
             onPressed: () {
-              context.setLocale(const Locale('en'));
-
-              print(context.locale.toString());
               context.read<PiramidaBloc>().add(const PiramidaEvent.fetchData());
             },
             child: const Text('Fetch Data in Piramida'),
@@ -146,7 +162,6 @@ class _HomeState extends State<Home> {
               backgroundColor: Colors.blue,
             ),
             onPressed: () {
-              context.setLocale(const Locale('ru'));
               context.read<OtherBloc>().add(const OtherEvent.fetchData());
             },
             child: const Text('Fetch Data in Other'),

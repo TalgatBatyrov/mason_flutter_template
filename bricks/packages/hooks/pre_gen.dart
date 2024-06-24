@@ -17,6 +17,7 @@ void run(HookContext context) async {
       'freezed',
       'freezed_annotation',
       'dartz',
+      'flutter_launcher_icons'
     ]);
 
     // dev dependencies

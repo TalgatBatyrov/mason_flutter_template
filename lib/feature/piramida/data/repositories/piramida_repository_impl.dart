@@ -7,8 +7,6 @@ import 'package:test_app/shared/config/api_service/api_client.dart';
 import 'package:test_app/shared/config/api_service/exceptions/server_exception.dart';
 import 'package:test_app/shared/config/di/injection.dart';
 
-
-
 @Singleton(as: PiramidaRepositoryInterface)
 class PiramidaRepositoryImpl implements PiramidaRepositoryInterface {
   const PiramidaRepositoryImpl();
@@ -29,9 +27,6 @@ class PiramidaRepositoryImpl implements PiramidaRepositoryInterface {
       return Right(result);
     } on DioException catch (e) {
       return Left(ServerException.fromDio(e));
-    } catch (e) {
-      return Left(Exception('Unexpected error: $e'));
     }
   }
 }
-

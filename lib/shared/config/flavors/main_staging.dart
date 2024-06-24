@@ -3,10 +3,6 @@ import 'package:test_app/app/app.dart';
 import 'package:test_app/shared/config/flavors/flavor_config.dart';
 
 void main() {
-  FlavorConfig(
-    name: 'Staging',
-    apiBaseUrl: 'https://api.prod.example.com',
-  );
-
+  FlavorConfig(Flavor.staging);
   runApp(const App());
 }
