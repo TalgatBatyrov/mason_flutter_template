@@ -71,6 +71,7 @@ class _HomeState extends State<Home> {
       ),
       body: Column(
         children: [
+          Text('error'.tr()),
           const Spacer(),
           BlocBuilder<PiramidaBloc, PiramidaState>(
             builder: (context, state) {
@@ -126,11 +127,11 @@ class _HomeState extends State<Home> {
             value: isEnglish,
             onChanged: (value) {
               if (value) {
-                context.setLocale(const Locale('en'));
                 isEnglish = true;
+                context.setLocale(const Locale('en'));
               } else {
-                context.setLocale(const Locale('ru'));
                 isEnglish = false;
+                context.setLocale(const Locale('ru'));
               }
               setState(() {});
             },
