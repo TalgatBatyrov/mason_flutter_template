@@ -15,3 +15,4 @@ class HomeInteractor {
     return await _repository.getHome();
   }
 }
+

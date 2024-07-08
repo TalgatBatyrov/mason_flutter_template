@@ -7,6 +7,8 @@ import 'package:test_app/shared/config/api_service/api_client.dart';
 import 'package:test_app/shared/config/api_service/exceptions/server_exception.dart';
 import 'package:test_app/shared/config/di/injection.dart';
 
+
+
 @Singleton(as: HomeRepositoryInterface)
 class HomeRepositoryImpl implements HomeRepositoryInterface {
   const HomeRepositoryImpl();
@@ -32,3 +34,4 @@ class HomeRepositoryImpl implements HomeRepositoryInterface {
     }
   }
 }
+
